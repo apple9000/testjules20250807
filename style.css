@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    line-height: 1.4;
+    color: #1a237e; /* Dark blue */
+}
+
+h2 {
+    border-bottom: 2px solid #3949ab; /* Medium blue */
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+a {
+    color: #3949ab;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Layout */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #1a237e; /* Dark blue */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: white;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #e8eaf6; /* Light blue-gray */
+    color: #5c6bc0; /* Indigo */
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Features Section */
+#features .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#features .feature-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#features .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Use Cases Section */
+.use-case {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.use-case h3 {
+    margin-top: 0;
+    color: #283593; /* Darker Indigo */
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Tips Section */
+#tips ul {
+    background-color: #e3f2fd; /* Light blue */
+    border-left: 5px solid #1e88e5; /* Blue */
+    list-style-type: none;
+    padding: 20px;
+}
+
+#tips li {
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header {
+        padding: 30px 15px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+}
