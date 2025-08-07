@@ -1,109 +1,98 @@
 /* General Styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     line-height: 1.8;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #444;
+    background: linear-gradient(to bottom right, #eef2f3, #e0eafc);
     margin: 0;
     padding: 0;
 }
 
 h1, h2, h3 {
     line-height: 1.4;
-    color: #1a237e; /* Dark blue */
+    color: #0d1b4c; /* Deeper blue */
+    font-weight: 700;
 }
 
 h2 {
-    border-bottom: 2px solid #3949ab; /* Medium blue */
+    border-bottom: 3px solid #6c5ce7; /* Vibrant purple */
     padding-bottom: 10px;
-    margin-top: 40px;
+    margin-top: 50px;
+    display: inline-block;
 }
 
 a {
-    color: #3949ab;
+    color: #6c5ce7;
     text-decoration: none;
+    font-weight: 600;
 }
 
 a:hover {
+    color: #4834d4;
     text-decoration: underline;
 }
 
 /* Layout */
 main {
-    max-width: 800px;
+    max-width: 850px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 25px;
 }
 
 header {
-    background-color: #1a237e; /* Dark blue */
+    background: #0d1b4c;
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
+    border-bottom: 5px solid #6c5ce7;
+    overflow: hidden; /* For animation */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3em;
     color: white;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
 }
 
 header p {
-    font-size: 1.1em;
-    opacity: 0.9;
+    font-size: 1.2em;
+    opacity: 0.85;
+    margin-top: 10px;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    background-color: #e8eaf6; /* Light blue-gray */
-    color: #5c6bc0; /* Indigo */
+    padding: 25px;
+    margin-top: 50px;
+    background-color: #0d1b4c;
+    color: #a7a9be;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
-/* Features & Differentiation Section */
-#features .feature-grid, #differentiation .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+/* Card Styles (for use-case, feature-item etc.) */
+.use-case, .feature-item {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 25px 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px 0 rgba(108, 92, 231, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#features .feature-item, #differentiation .feature-item {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
+.use-case:hover, .feature-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px 0 rgba(108, 92, 231, 0.3);
 }
 
-#features .feature-item:hover, #differentiation .feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-#differentiation .feature-item h3 {
+.use-case h3, .feature-item h3 {
     margin-top: 0;
-}
-
-/* Use Cases & Getting Started Section */
-.use-case {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px 30px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-}
-
-.use-case h3 {
-    margin-top: 0;
-    color: #283593; /* Darker Indigo */
+    color: #4834d4;
 }
 
 ul {
@@ -111,67 +100,130 @@ ul {
 }
 
 li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+/* Features & Differentiation Section */
+#differentiation .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+#differentiation .feature-item {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Tips Section */
 #tips ul {
-    background-color: #e3f2fd; /* Light blue */
-    border-left: 5px solid #1e88e5; /* Blue */
+    background-color: rgba(232, 234, 246, 0.7);
+    border-left: 5px solid #fd79a8; /* Playful pink */
     list-style-type: none;
-    padding: 20px;
-}
-
-#tips li {
-    margin-bottom: 15px;
+    padding: 25px;
+    border-radius: 8px;
 }
 
 /* Code Block */
 .code-block {
-    background-color: #2d2d2d;
-    color: #f8f8f2;
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    padding: 15px 20px;
-    border-radius: 6px;
+    background-color: #2d3436;
+    color: #f2f2f2;
+    font-family: "'Fira Code', 'Menlo', 'Monaco', monospace";
+    padding: 20px;
+    border-radius: 8px;
     margin-top: 15px;
-    font-size: 0.95em;
+    font-size: 1em;
     overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Button */
 .button {
     display: inline-block;
-    background-color: #3949ab;
+    background-image: linear-gradient(to right, #6c5ce7 0%, #a29bfe 51%, #6c5ce7 100%);
+    background-size: 200% auto;
     color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
+    padding: 15px 30px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.2s, transform 0.2s;
-    margin-top: 10px;
+    transition: all 0.4s ease;
+    margin-top: 15px;
+    border: none;
 }
 
 .button:hover {
-    background-color: #1a237e;
-    transform: translateY(-2px);
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
     text-decoration: none;
     color: white;
 }
 
+/* Animations */
+.typing-animation {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .1em solid #6c5ce7;
+    animation: typing 2.5s steps(30, end) forwards, blink-caret .75s step-end infinite;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.8s forwards;
+    animation-delay: calc(var(--order) * 100ms); /* Staggered animation */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #6c5ce7; }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Responsive */
 @media (max-width: 600px) {
-    header {
-        padding: 30px 15px;
-    }
     header h1 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
     main {
         margin: 20px auto;
         padding: 0 15px;
     }
-    #features .feature-grid, #differentiation .feature-grid {
+    #differentiation .feature-grid {
         grid-template-columns: 1fr;
     }
 }
+
+/* Add JS-interactivity for fade-in */
+/* This part is a comment, but explains how to use the fade-in effect with JS */
+/*
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('.fade-in-section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach((section, index) => {
+        section.style.setProperty('--order', index);
+        observer.observe(section);
+    });
+});
+*/
